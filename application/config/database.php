@@ -82,7 +82,7 @@ $db['default'] = array(
 
 	'username' => 'bapped14_dev',
 	'password' => 'bappedaksb21',
-	'database' => 'bapped14_app',
+	'database' => 'bapped14_databpjs',
 
 	// 'username' => 'bapped12_warga',
 	// 'password' => 'Warga@2021',
