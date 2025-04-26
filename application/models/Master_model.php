@@ -78,6 +78,20 @@ class Master_model extends CI_Model {
         $this->datatables->from('m_admin a');
         $this->datatables->join('m_level b', 'a.level=b.id_level');
         return $this->datatables->generate();
+        // $this->db->select('a.id,a.username,a.nama_lengkap,a.email,a.status,a.level,b.nama_level');
+        // // $this->db->from('m_admin a');
+        // $this->db->join('m_level b', 'a.level=b.id_level');
+        // return $this->db->get('m_admin a')->row();
+
+
+        // $this->db->select('a.*, b.id as id_pekerjaan, b.nama_jenis,c.*,d.*');
+        // $this->db->join('m_jenis_peserta b', 'a.pekerjaan = b.id');
+        // $this->db->join('m_kecamatan c', 'a.id_kecamatan = c.id_kecamatan');
+        // $this->db->join('m_desa d', 'a.id_desa = d.id_desa');
+        // $this->db->where('a.nik', $id);
+        // $this->db->where('a.status_data', '0');
+        // $query = $this->db->get('t_pribadi a');
+        // return $query->row();
     }
 
     //LEVEL
@@ -125,10 +139,10 @@ class Master_model extends CI_Model {
     //DESA
     public function getDesa()
     {
-
-        $this->datatables->select('a.id_desa,a.nama_desa,a.created_at,b.id_kecamatan,b.nama_kecamatan');
+        // a.created_at,m_kecamatan.id_kecamatan,
+        $this->datatables->select('a.id_desa,a.nama_desa,m_kecamatan.nama_kecamatan');
         $this->datatables->from('m_desa a');
-        $this->datatables->join('m_kecamatan b', 'a.id_kecamatan = b.id_kecamatan', 'left');
+        $this->datatables->join('m_kecamatan', 'a.id_kecamatan = m_kecamatan.id_kecamatan');
         return $this->datatables->generate();
     }
 

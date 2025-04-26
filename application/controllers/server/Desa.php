@@ -71,6 +71,7 @@ class Desa extends CI_Controller {
 
 	public function data()
 	{
+		// return print_r(json_encode($this->master->getDesa()));
 		$this->output_json($this->master->getDesa(), false);
 	}
 

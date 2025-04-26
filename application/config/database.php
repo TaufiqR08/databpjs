@@ -76,13 +76,13 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	// 'username' => 'root',
-	// 'password' => 'root',
-	// 'database' => 'data_bpjs',
+	'username' => 'root',
+	'password' => 'root',
+	'database' => 'data_bpjs',
 
-	'username' => 'bapped14_dev',
-	'password' => 'bappedaksb21',
-	'database' => 'bapped14_databpjs',
+	// 'username' => 'bapped14_dev',
+	// 'password' => 'bappedaksb21',
+	// 'database' => 'bapped14_databpjs',
 
 	// 'username' => 'bapped12_warga',
 	// 'password' => 'Warga@2021',

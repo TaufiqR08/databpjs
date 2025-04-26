@@ -123,6 +123,8 @@
     */
     public function join($table, $fk, $type = NULL)
     {
+      // log_message('debug', 'JOIN => Table: '.$table.', FK: '.$fk.', Type: '.$type);
+      $type = empty($type) ? '' : $type;
       $this->joins[] = array($table, $fk, $type);
       $this->ci->db->join($table, $fk, $type);
       return $this;
@@ -444,11 +446,11 @@
       foreach($this->or_like as $val)
         $this->ci->db->or_like($val[0], $val[1], $val[2]);
 
-      if (strlen((string)$value) > 0)
-      {
+      
+      // {
         $this->ci->db->distinct($this->distinct);
         $this->ci->db->select($this->columns);
-      }
+      // }
 
       $query = $this->ci->db->get($this->table, NULL, NULL, FALSE);
       return $query->num_rows();

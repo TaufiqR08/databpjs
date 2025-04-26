@@ -87,7 +87,7 @@ class Admin extends CI_Controller {
         //     ['id' => 2, 'nama' => 'Smartphone', 'harga' => 5000000],
         //     ['id' => 3, 'nama' => 'Headphone', 'harga' => 1000000],
         // ];
-
+		// return print_r(json_encode($this->master->getPengguna()));
         // Kirim data sebagai JSON (encode true)
         // $this->output_json($produk);
 		$this->output_json($this->master->getPengguna(), false);
